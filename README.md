@@ -23,10 +23,10 @@ Options:
                 
  * -b,--beta :	        Allow to change the value of the scalar beta used in computing the output alpha * M[l,w]V[w] + beta * Y[w] (default 0)
     		
- * -ph,--path_to_iso	Allow to change the path to Halide.h headers,Noting that it is  neccessary to install Halide and change this path in order  to run this script  
+ * -ph,--path_to_iso :	Allow to change the path to Halide.h headers,Noting that it is  neccessary to install Halide and change this path in order  to run this script  
     		
- *  -ps,--path_to_h	Allow to change the path to libHalide.iso,Noting that it is   neccessary to install Halide and change this path in order  to run this script 
+ *  -ps,--path_to_h :	Allow to change the path to libHalide.iso,Noting that it is   neccessary to install Halide and change this path in order  to run this script 
  
- * -e,--accepted_error   Allow to change the error acceted during the comparing of the output of the two implementations(C and Halide)(default 0.00001)   
+ * -e,--accepted_error :   Allow to change the error acceted during the comparing of the output of the two implementations(C and Halide)(default 0.00001)   
                
-   --help              display this help and exit
+  * --help :              display this help and exit
