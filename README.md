@@ -10,5 +10,6 @@ In both Halide and pure C then  compare the results to check they are matching.
    -ph and -ps ) in order for this script to run correctly .
    
 2. The Script is written in bash script language so in order to run it you should use bash interpreter which is included by default in
-Unix systems(Linux and MacOS)
-the command to run the script is : #bash ./comp.sh
+Unix systems(Linux and MacOS) , The command to run the script is : #bash ./comp.sh
+
+3. 
