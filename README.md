@@ -15,7 +15,7 @@ Unix systems(Linux and MacOS) , The command to run the script is : #bash ./comp.
 The comman come with several options that you can specify in order to change key parameters ,this options are presented below:
 Options:
     
- * #####-l,--lenght :          Allow to change the lenght of the matrix M which also set the size of the output vector to be the same (default 16)
+ * -l,--lenght :          Allow to change the lenght of the matrix M which also set the size of the output vector to be the same (default 16)
                 
  * -w,--width :     Allow to change the lenght of the matrix M which also set the size of the vector Y to be the same (default 24)
                 
