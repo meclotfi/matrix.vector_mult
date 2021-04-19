@@ -4,6 +4,7 @@ l="3"
 w="2"
 a="1"
 b="0"
+err="0.00001"
 #change this two paths to point to Halide.h location(include) and Halide.so(sources) respectively
 path_to_h="/home/meclotfi/Desktop/llvm/Halide/build/include"
 path_to_so="/home/meclotfi/Desktop/llvm/Halide/build/src"
@@ -32,11 +33,11 @@ do
                         shift
                         ;;
                 -ps|--path_to_iso)
-                        path_to_h="$2"
+                        path_to_so="$2"
                         shift
                         ;;
                 -e|--accepted_error)
-                        path_to_h="$2"
+                        err="$2"
                         shift
                         ;;
                 --help|*)
@@ -91,5 +92,5 @@ done
 
 
 g++ "Mat-Vect mult .cpp" -g -I $path_to_h  -L $path_to_so  -lHalide -lpthread -ldl -o exe -std=c++11
-./exe -l $l -w $w -a $a -b $b
+./exe -l $l -w $w -a $a -b $b -e $err$
 
