@@ -29,4 +29,4 @@ Options:
  
  * **-e,--accepted_error** :   Allow to change the error acceted during the comparing of the output of the two implementations(C and Halide)(default 0.00001)   
                
-  * **--help** :              display this help and exit
+  * **--help** :              display the help and exit
