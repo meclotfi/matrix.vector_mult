@@ -15,27 +15,18 @@ Unix systems(Linux and MacOS) , The command to run the script is : #bash ./comp.
 The comman come with several options that you can specify in order to change key parameters ,this options are presented below:
 Options:
     
- -l,--lenght           Allow to change the lenght of the matrix M which also 
-                          set the size of the output vector to be the same (default 16)
+ * -l,--lenght :          Allow to change the lenght of the matrix M which also set the size of the output vector to be the same (default 16)
                 
- -w,--width	        Allow to change the lenght of the matrix M which also 
-                          set the size of the vector Y to be the same (default 24)
+ * -w,--width :     Allow to change the lenght of the matrix M which also set the size of the vector Y to be the same (default 24)
                 
- -a,--alpha	        Allow to change the value of the scalar alpha used in computing 
-                          the output alpha * M[l,w]V[w] + beta * Y[w] (default 1)
+ * -a,--alpha :	        Allow to change the value of the scalar alpha used in computing the output alpha * M[l,w]V[w] + beta * Y[w] (default 1)
                 
- -b,--beta	        Allow to change the value of the scalar beta used in computing the
-                          output alpha * M[l,w]V[w] + beta * Y[w] (default 0)
+ * -b,--beta :	        Allow to change the value of the scalar beta used in computing the output alpha * M[l,w]V[w] + beta * Y[w] (default 0)
     		
- -ph,--path_to_iso	Allow to change the path to Halide.h headers,Noting that it is  
-                          neccessary to install Halide and change this path in order 
-                          to run this script  
+ * -ph,--path_to_iso	Allow to change the path to Halide.h headers,Noting that it is  neccessary to install Halide and change this path in order  to run this script  
     		
- -ps,--path_to_h	Allow to change the path to libHalide.iso,Noting that it is  
-                          neccessary to install Halide and change this path in order 
-                          to run this script 
+ *  -ps,--path_to_h	Allow to change the path to libHalide.iso,Noting that it is   neccessary to install Halide and change this path in order  to run this script 
  
- -e,--accepted_error   Allow to change the error acceted during the comparing of the output
-                          of the two implementations(C and Halide)(default 0.00001)   
+ * -e,--accepted_error   Allow to change the error acceted during the comparing of the output of the two implementations(C and Halide)(default 0.00001)   
                
    --help              display this help and exit
