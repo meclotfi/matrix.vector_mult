@@ -8,16 +8,14 @@
 #include <stdlib.h>
 using namespace Halide;
 
-void check_results(float* imp_c,float* imp_h,int lenght)
+void check_results(float* imp_c,float* imp_h,int lenght,float err_thresh)
 {
 bool Is_equal=true;
-
-float erreur_thresh=0.001f;
 float ind_err,sum=0;
 int index;
  for (int i = 0; i < lenght; i++) {
             ind_err=std::abs(imp_c[i] - imp_h[i]);
-            if ((ind_err<erreur_thresh) && (Is_equal)){ Is_equal=true;index=i;}
+            if ((ind_err<err_thresh) && (Is_equal)){ Is_equal=true;index=i;}
             else Is_equal=false;
             sum+=ind_err;
         }
@@ -33,7 +31,7 @@ else
 
 }
 
-void print_results(float* imp_c,float* imp_h,int lenght)
+void print_results(float* imp_c,float* imp_h,int lenght,float err_thresh)
 {
 printf("|------------------------------------------------------------------------------------------------|\n");
 printf("| Index  |  Halide Implementation  output | C Implementation Output | Difference(absolute error) |\n");
@@ -45,7 +43,7 @@ float ind_err,sum;
  for (int i = 0; i < lenght; i++) {
             ind_err=std::abs(imp_c[i] - imp_h[i]);
 
-            if ((ind_err<erreur_thresh) && (Is_equal)) Is_equal=true;
+            if ((ind_err<err_thresh) && (Is_equal)) Is_equal=true;
             else Is_equal=false;
 
             sum+=ind_err;
@@ -88,6 +86,7 @@ int main(int argc, char **argv) {
     int lenght=3;
     int width=2;
     int beta=0,alpha=1;
+    float err_thresh=0.00001f;
 
 //parsing arguments of commande line
    for (int i = 1; i < argc; i=i+2)
@@ -97,6 +96,7 @@ int main(int argc, char **argv) {
         if(strcmp(argv[i],"-w")==0) width=atoi(argv[i+1]);
         if(strcmp(argv[i],"-a")==0) alpha=atoi(argv[i+1]);
         if(strcmp(argv[i],"-b")==0) beta=atoi(argv[i+1]);
+        if(strcmp(argv[i],"-e")==0) err_thresh=atof(argv[i+1]);
         
     }
   
@@ -163,13 +163,13 @@ mat_mult_vect_C(M.data(),V.data(),Y.data(),lenght,width,output_c,alpha,beta);
 
 
 //Comparing the two results
-check_results(output_c,output_h.data(),lenght);
+check_results(output_c,output_h.data(),lenght,err_thresh);
 char ch;
 printf(" Enter y to see more details about the results [y/n] : ");
 scanf("%c",&ch);
 if(ch=='y')
 {
-    print_results(output_c,output_h.data(),lenght);
+    print_results(output_c,output_h.data(),lenght,err_thresh);
 }
 return 0;
 }
