@@ -90,7 +90,10 @@ echo "comp: comp [ -l | -w | -a | -b | -ph | -ps ]
 
 done
 
+# this lines add halid sources to the library path temporarly
+if echo ":$LD_LIBRARY_PATH:" | grep -q ":$path_to_so:"; then echo "$LD_LIBRARY_PATH"; else export LD_LIBRARY_PATH=$path_to_so:$LD_LIBRARY_PATH; fi
 
+#compile and execute the code
 g++ "Mat-Vect mult .cpp" -g -I $path_to_h  -L $path_to_so  -lHalide -lpthread -ldl -o exe -std=c++11
 ./exe -l $l -w $w -a $a -b $b -e $err$
 
