@@ -83,8 +83,8 @@ void mat_mult_vect_C(float* M, float *V,float *Y,int l,int w,float *output,int a
 
 int main(int argc, char **argv) {
 
-    int lenght=3;
-    int width=2;
+    int lenght=16;
+    int width=24;
     int beta=0,alpha=1;
     float err_thresh=0.00001f;
 

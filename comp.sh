@@ -1,7 +1,7 @@
 #! bin/bash
 # Load the user defined parameters
-l="3"
-w="2"
+l="16"
+w="24"
 a="1"
 b="0"
 err="0.00001"
@@ -95,5 +95,5 @@ if echo ":$LD_LIBRARY_PATH:" | grep -q ":$path_to_so:"; then echo "$LD_LIBRARY_P
 
 #compile and execute the code
 g++ "Mat-Vect mult .cpp" -g -I $path_to_h  -L $path_to_so  -lHalide -lpthread -ldl -o exe -std=c++11
-./exe -l $l -w $w -a $a -b $b -e $err$
+./exe -l $l -w $w -a $a -b $b -e $err
 
